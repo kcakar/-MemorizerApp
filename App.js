@@ -1,13 +1,10 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import MainPage from './components/MainPage';
+import Menubar from './components/Menubar';
+import Intro from './components/Intro';
+
+
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -16,20 +13,51 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+const pageStates={
+  'intro':0,
+  'main':1
+}
+
+export default class App extends Component {
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      page:pageStates.intro
+    }
+  }
+
+  toMainPage= ()=>
+  {
+    console.log("happened")
+    this.setState({page:pageStates.main});
+  }
+
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
+    if(this.state.page==pageStates.intro)
+    {
+      return (
+        <View style={styles.appContainer}>
+          <Intro toMainPage={this.toMainPage}/>
+        </View>
+      );
+    }
+    else if(this.state.page===pageStates.main)
+    {
+      return (
+        <View style={styles.appContainer}>
+          <Menubar></Menubar>
+          <MainPage/>
+        </View>
+      );
+    }
   }
 }
 
 const styles = StyleSheet.create({
+  appContainer:{
+    flex:1
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
