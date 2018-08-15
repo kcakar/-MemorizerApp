@@ -15,7 +15,7 @@ export default class Intro extends React.Component{
                     </View>
                     <View style={styles.textContainer}>
                         <Text style={[styles.slideText,human.title1White]}>Impove your memory!</Text>
-                        <Text style={[styles.slideDesc,material.subheading]}>Learn what you want, when you want.</Text>
+                        <Text style={[material.body2White,styles.slideDesc]}>Learn what you want, when you want.</Text>
                     </View>
                 </View>
                 <View level={10} style={[styles.slideGeneral,styles.slide2]}>
@@ -23,12 +23,14 @@ export default class Intro extends React.Component{
                         <Image style={styles.slide2Img} source={require('../img/c2.png')}></Image>
                     </View>
                     <Text style={[styles.slideText,human.title1White]}>Widen your vocabulary!</Text>
+                    <Text style={[material.body2White,styles.slideDesc]}>Target exactly what you need to learn.</Text>
                 </View>
                 <View level={-10} style={[styles.slideGeneral,styles.slide3]}>
                     <View style={styles.imageContainer}>
                         <Image style={styles.slide3Img} source={require('../img/c3.png')}></Image>
                     </View>
                     <Text style={[styles.slideText,human.title1White]}>Challange your friends!</Text>
+                    <Text style={[material.body2White,styles.slideDesc]}>Show them what you are made of!</Text>
                     <Button large 
                         rightIcon={{name: 'favorite'}} 
                         title='START NOW' 
@@ -49,7 +51,7 @@ const styles=StyleSheet.create({
         justifyContent:'center',
     },
     imageContainer:{
-        height:200,
+        height:150,
         justifyContent:'center',
         alignItems:'center'
     },
@@ -77,15 +79,19 @@ const styles=StyleSheet.create({
         paddingLeft:20
     },
     slideText:{
-        height:200,
         textAlign:'center'
     },
     slideDesc:{
-        width:150
+        textAlign:'center',
+        width:150,
+        alignSelf:'center',
+        lineHeight:15,
+        marginTop:10
     },
     startButton:{
         backgroundColor:'#65CEA6',
         borderRadius:10,
-        height:60
+        height:60,
+        marginTop:10
     }
 });

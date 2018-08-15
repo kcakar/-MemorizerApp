@@ -5,7 +5,7 @@ export default class MainPage extends Component {
   render() {
     return (
       <View style={styles.mainContainer}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
+        <Text style={styles.welcome}>--</Text>
       </View>
     );
   }
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#4c1d72',
+    backgroundColor: '#7400ad',
   },
   welcome: {
     fontSize: 20,

@@ -1,3 +1,4 @@
+// react-native run-ios
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import MainPage from './components/MainPage';
@@ -23,7 +24,9 @@ export default class App extends Component {
   {
     super(props);
     this.state={
-      page:pageStates.intro
+      // page:pageStates.intro
+      page:pageStates.main
+
     }
   }
 
